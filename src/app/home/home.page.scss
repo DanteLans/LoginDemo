@@ -1,27 +1,103 @@
+@import '../../theme/breakpoints.scss';
+@mixin baseBtn {
+  --padding-bottom: 15px;
+  --padding-end: 15px;
+  --padding-start: 15px;
+  --padding-top: 15px;
+  --box-shadow: none;
+  border-radius: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
+  width: 150px; 
+  font-size: 17px;
+  @include breakpoint(sm-max) { 
+    width: 130px; 
+    font-size: 16px;
+  }
+}
+
 #container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  padding: 10%;
+}
+
+#section1 {
+  ion-text h1 {
+    font-size: xxx-large;
+    font-family: "Nunito", sans-serif !important;
+    color: #000;
+    font-weight: 900;
+  }
+}
+
+#section2 {
+  ion-button {
+    @include baseBtn;
+    --color: #333;
+    --background: transparent;
+    border: 1px solid #eee;
+  }
+
+  img.google {
+    width: 20px;
+    margin: 10px;
+  }
+  img.facebook {
+    width: 10px;
+    margin: 10px;
+  }
+}
+
+#section3 {
+  margin-top: 15px;
+  ion-label {
+    --color: #999;
+    font-size: 18px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+  }
+  ion-input {
+    --background: #e4eff8;
+    --padding-bottom: 15px;
+    --padding-end: 15px;
+    --padding-start: 15px;
+    --padding-top: 15px;
+    border: 1px solid #e4eff8;
+    border-radius: 50px;
+    font-size: 18px;
+  }
+}
+
+#section4 {
+  margin-top: 15px;
+  ion-button {
+    @include baseBtn;
+    --color: #fff;
+    --background: #20BDFF;
+    border: unset;
+  }
+  ion-label {
+    color: #999;
+    font-size: 18px;
+  }
+  ion-toggle {
+    --background-checked: #20BDFF;
+  }
+}
+
+ion-footer {
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  a {
+    font-size: 18px;
+    color: #999;
+  }
+  a:hover {
+    color: #000;
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}

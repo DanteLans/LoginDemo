@@ -1,20 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div id="section1">
+      <ion-text>
+        <h1>Welcome</h1>
+      </ion-text>
+    </div>
+    <div id="section2">
+      <ion-button shape="round" (click)="signInWithGoogle()">
+        <img src="../../assets/Google.svg" class="google">
+        Google
+      </ion-button>
+      <ion-button shape="round" (click)="singInWithFacebook()">
+        <img src="../../assets/Facebook.svg" class="facebook">
+        Facebook
+      </ion-button>
+    </div>
+    <div id="section3">
+      <ion-item lines="none">
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input clearInput type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input clearInput type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </div>
+    <div id="section4">
+      <ion-button shape="round" (click)="initWithEmail()">
+        {{newUser? "Register": "Login"}}
+      </ion-button>
+      <ion-item lines="none">
+        <ion-label>New user</ion-label>
+        <ion-toggle [(ngModel)]="newUser"></ion-toggle>
+      </ion-item>
+    </div>
   </div>
 </ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <a>Forgot Password</a>
+  </ion-toolbar>
+</ion-footer>
